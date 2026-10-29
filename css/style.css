@@ -15,10 +15,17 @@
   --cr-shadow-sm: 0 2px 8px rgba(60, 40, 25, 0.04);
   --cr-shadow-md: 0 6px 18px rgba(60, 40, 25, 0.08);
   --cr-shadow-lg: 0 12px 28px rgba(60, 40, 25, 0.12);
+  --cr-navbar-height: 76px;          /* Height for fixed navbar compensation */
+}
+
+/* Scroll padding to prevent fixed navbar from obscuring anchors */
+html {
+  scroll-padding-top: var(--cr-navbar-height);
 }
 
 /* Global Reset & Typography */
 body {
+  padding-top: var(--cr-navbar-height); /* Offset for fixed-top navbar */
   background-color: var(--cr-bg);
   color: var(--cr-text-main);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -113,6 +120,17 @@ p {
 
 .navbar-clay .navbar-toggler:focus {
   box-shadow: 0 0 0 3px rgba(184, 93, 56, 0.25);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-clay .navbar-collapse {
+    max-height: calc(100vh - var(--cr-navbar-height));
+    overflow-y: auto;
+    background-color: var(--cr-surface);
+    padding: 0.85rem 0.5rem;
+    border-top: 1px solid var(--cr-border-subtle);
+    margin-top: 0.5rem;
+  }
 }
 
 /* ClayRoots Buttons */
