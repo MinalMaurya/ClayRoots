@@ -488,6 +488,94 @@ p {
   gap: 1.5rem;
 }
 
+/* Catalogue Controls (Filters & Sorting Bar) */
+.catalogue-controls {
+  background-color: var(--cr-surface);
+  border: 1px solid var(--cr-border);
+  border-radius: 12px;
+  box-shadow: var(--cr-shadow-sm);
+}
+
+/* Product Category Filter Buttons */
+.btn-category-filter {
+  background-color: var(--cr-surface);
+  border: 1.5px solid var(--cr-border);
+  color: var(--cr-text-muted);
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.45rem 1rem;
+  border-radius: 50rem;
+  transition: all 0.2s ease;
+  line-height: 1.25;
+}
+
+.btn-category-filter:hover {
+  background-color: var(--cr-primary-light);
+  border-color: var(--cr-primary);
+  color: var(--cr-primary);
+}
+
+.btn-category-filter.active,
+.btn-category-filter:active {
+  background-color: var(--cr-primary) !important;
+  border-color: var(--cr-primary) !important;
+  color: #ffffff !important;
+  box-shadow: 0 3px 8px rgba(184, 93, 56, 0.25);
+  font-weight: 600;
+}
+
+.btn-category-filter:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(184, 93, 56, 0.25);
+}
+
+/* Product Sorting Dropdown */
+.clay-sort-select {
+  border: 1.5px solid var(--cr-border);
+  border-radius: 8px;
+  background-color: var(--cr-surface);
+  color: var(--cr-text-main);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.45rem 2rem 0.45rem 0.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.clay-sort-select:focus {
+  border-color: var(--cr-primary);
+  box-shadow: 0 0 0 3px rgba(184, 93, 56, 0.2);
+  outline: none;
+}
+
+/* Catalogue Empty State */
+.clay-empty-state {
+  background-color: var(--cr-surface);
+  border: 1.5px dashed var(--cr-border);
+  border-radius: 14px;
+  padding: 3rem 1.5rem;
+  box-shadow: var(--cr-shadow-sm);
+}
+
+.clay-empty-state .empty-state-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  background-color: var(--cr-primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cr-primary);
+}
+
+/* Optional Product Price Styling */
+.product-price {
+  color: var(--cr-primary);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 /* Subtle Transitions */
 .fade-in {
   animation: fadeIn 0.3s ease-in-out;

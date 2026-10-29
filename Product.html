@@ -90,15 +90,91 @@
         <main class="py-5">
             <div class="container text-center">
                 <h1 class="section-title">Our Handcrafted Pottery Collection</h1>
-                <p class="text-muted mx-auto mb-5" style="max-width: 650px;">
+                <p class="text-muted mx-auto mb-4" style="max-width: 650px;">
                     Explore our curated collection of wheel-thrown and hand-molded clay creations. Click on any item to view its details or place an inquiry.
                 </p>
 
+                <!-- Catalogue Controls: Category Filters & Compact Sorting -->
+                <div class="catalogue-controls mb-4 p-3 text-start">
+                    <div class="row align-items-center g-3 justify-content-between">
+                        <!-- Category Filters -->
+                        <div class="col-12 col-lg-auto">
+                            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2" role="group" aria-label="Product Category Filters">
+                                <button
+                                    type="button"
+                                    class="btn btn-category-filter active"
+                                    data-category="all"
+                                    aria-pressed="true"
+                                >
+                                    All Products
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-category-filter"
+                                    data-category="pots"
+                                    aria-pressed="false"
+                                >
+                                    Pots
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-category-filter"
+                                    data-category="mugs"
+                                    aria-pressed="false"
+                                >
+                                    Mugs
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-category-filter"
+                                    data-category="vases"
+                                    aria-pressed="false"
+                                >
+                                    Vases
+                                </button>
+                                <button
+                                    type="button"
+                                    class="btn btn-category-filter"
+                                    data-category="home-decor"
+                                    aria-pressed="false"
+                                >
+                                    Home Decor
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Sorting Dropdown -->
+                        <div class="col-12 col-lg-auto">
+                            <div class="d-flex align-items-center justify-content-center justify-content-lg-end gap-2">
+                                <label for="productSortSelect" class="form-label mb-0 small text-muted text-nowrap fw-medium">
+                                    Sort by:
+                                </label>
+                                <select
+                                    id="productSortSelect"
+                                    class="form-select form-select-sm clay-sort-select"
+                                    style="min-width: 175px;"
+                                    aria-label="Sort products"
+                                >
+                                    <option value="default" selected>Default Order</option>
+                                    <option value="price-asc">Price: Low to High</option>
+                                    <option value="price-desc">Price: High to Low</option>
+                                    <option value="name-asc">Name: A to Z</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Status Feedback -->
+                <div class="d-flex justify-content-between align-items-center mb-3 px-1">
+                    <small class="text-muted" id="catalogueStatus" aria-live="polite">Showing all 8 products</small>
+                </div>
+
                 <!-- Responsive Products Grid (8 existing products) -->
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
+                <div id="productGrid" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 justify-content-center">
                     
                     <!-- Product 1 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-1" data-default-order="1" data-name="Terracotta Jewelry Set" data-category="Artisanal Jewelry" data-categories="all jewelry">
                         <div class="card clay-card h-100" data-product-id="prod-1">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -110,6 +186,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Artisanal Jewelry</span>
                                 <h5 class="card-title">Terracotta Jewelry Set</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Artisan-crafted terracotta necklace set featuring traditional handcrafted motifs and rich earthy tones.
                                 </p>
@@ -134,7 +211,7 @@
                     </div>
 
                     <!-- Product 2 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-2" data-default-order="2" data-name="Decorative Miniature Clay Pots" data-category="Home &amp; Festive Decor" data-categories="all pots home-decor">
                         <div class="card clay-card h-100" data-product-id="prod-2">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -146,6 +223,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Home &amp; Festive Decor</span>
                                 <h5 class="card-title">Decorative Miniature Clay Pots</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Hand-shaped miniature terracotta pots designed for table accents, festive displays, and craft lovers.
                                 </p>
@@ -170,7 +248,7 @@
                     </div>
 
                     <!-- Product 3 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-3" data-default-order="3" data-name="Clay Serving Bowl with Glass Lid" data-category="Earthen Cookware" data-categories="all cookware">
                         <div class="card clay-card h-100" data-product-id="prod-3">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -182,6 +260,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Earthen Cookware</span>
                                 <h5 class="card-title">Clay Serving Bowl with Glass Lid</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Handcrafted earthen serving bowl with a transparent glass lid, preserving warmth and aroma.
                                 </p>
@@ -206,7 +285,7 @@
                     </div>
 
                     <!-- Product 4 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-4" data-default-order="4" data-name="Traditional Terracotta Cooking Pots" data-category="Traditional Cookware" data-categories="all pots cookware">
                         <div class="card clay-card h-100" data-product-id="prod-4">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -217,7 +296,8 @@
                             </div>
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Traditional Cookware</span>
-                                <h5 class="card-title">Traditional Terracotta Pots</h5>
+                                <h5 class="card-title">Traditional Terracotta Cooking Pots</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Classic wheel-thrown terracotta cooking pots engineered for wholesome, slow-cooked meals.
                                 </p>
@@ -242,7 +322,7 @@
                     </div>
 
                     <!-- Product 5 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-5" data-default-order="5" data-name="Handmade Clay Kulhad Cups" data-category="Drinkware" data-categories="all drinkware">
                         <div class="card clay-card h-100" data-product-id="prod-5">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -254,6 +334,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Drinkware</span>
                                 <h5 class="card-title">Handmade Clay Kulhad Cups</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Authentic unglazed terracotta kulhad cups for tea, coffee, and traditional Indian beverages.
                                 </p>
@@ -278,7 +359,7 @@
                     </div>
 
                     <!-- Product 6 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-6" data-default-order="6" data-name="Earthen Clay Water Bottle" data-category="Eco Living" data-categories="all eco-living">
                         <div class="card clay-card h-100" data-product-id="prod-6">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -290,6 +371,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Eco Living</span>
                                 <h5 class="card-title">Earthen Clay Water Bottle</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Natural clay water bottle designed to cool water through natural evaporation without electricity.
                                 </p>
@@ -314,7 +396,7 @@
                     </div>
 
                     <!-- Product 7 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-7" data-default-order="7" data-name="Artisan Terracotta Vase" data-category="Decorative Pottery" data-categories="all vases home-decor">
                         <div class="card clay-card h-100" data-product-id="prod-7">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -326,6 +408,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Decorative Pottery</span>
                                 <h5 class="card-title">Artisan Terracotta Vase</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Sculptural textured clay vase showcasing organic earthenware textures and contemporary minimalism.
                                 </p>
@@ -350,7 +433,7 @@
                     </div>
 
                     <!-- Product 8 -->
-                    <div class="col">
+                    <div class="col product-col" data-product-id="prod-8" data-default-order="8" data-name="Terracotta Planter Pot" data-category="Garden &amp; Plants" data-categories="all pots home-decor">
                         <div class="card clay-card h-100" data-product-id="prod-8">
                             <div class="clay-card-img-wrapper">
                                 <img
@@ -362,6 +445,7 @@
                             <div class="card-body">
                                 <span class="badge-terracotta mb-2 mx-auto">Garden &amp; Plants</span>
                                 <h5 class="card-title">Terracotta Planter Pot</h5>
+                                <div class="product-price mb-2 d-none" data-product-price></div>
                                 <p class="card-text small">
                                     Porous natural terracotta planter pot offering superior aeration and moisture balance for plant roots.
                                 </p>
@@ -385,6 +469,22 @@
                         </div>
                     </div>
 
+                </div>
+
+                <!-- Empty State Container -->
+                <div id="productEmptyState" class="clay-empty-state text-center my-4 d-none" aria-live="polite">
+                    <div class="empty-state-icon mb-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </div>
+                    <h4 class="fw-semibold mb-2">No products found in this category</h4>
+                    <p class="text-muted mx-auto mb-4" style="max-width: 480px;">
+                        No products found in this category. Try selecting another category.
+                    </p>
+                    <button type="button" class="btn btn-terracotta" id="btnResetFilter">
+                        Show All Products
+                    </button>
                 </div>
             </div>
         </main>
