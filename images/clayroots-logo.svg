@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="ClayRoots Logo">
+  <defs>
+    <!-- Soft warm background badge gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffdfa" />
+      <stop offset="85%" stop-color="#f5ede3" />
+      <stop offset="100%" stop-color="#ebe0d2" />
+    </radialGradient>
+    
+    <!-- Terracotta pot gradient -->
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97a52" />
+      <stop offset="45%" stop-color="#b85d38" />
+      <stop offset="100%" stop-color="#8a3f21" />
+    </linearGradient>
+
+    <!-- Vessel rim gradient -->
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9e4928" />
+      <stop offset="50%" stop-color="#e0865e" />
+      <stop offset="100%" stop-color="#8a3f21" />
+    </linearGradient>
+
+    <!-- Leaf / Sprout green gradient -->
+    <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4d784e" />
+      <stop offset="100%" stop-color="#7ea777" />
+    </linearGradient>
+
+    <!-- Potter's hands / base accent -->
+    <linearGradient id="handGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c99572" />
+      <stop offset="100%" stop-color="#9c6d4e" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular background badge -->
+  <circle cx="60" cy="60" r="56" fill="url(#bgGrad)" stroke="#dfd1c2" stroke-width="2.5" />
+
+  <!-- Potter's Hands / Framing Arc at base -->
+  <path d="M 28 82 C 34 94, 50 99, 60 99 C 70 99, 86 94, 92 82 C 84 89, 72 92, 60 92 C 48 92, 36 89, 28 82 Z" 
+        fill="url(#handGrad)" opacity="0.85" />
+
+  <!-- Terracotta Clay Pot / Vessel Body -->
+  <!-- Pot base and belly -->
+  <path d="M 43 86 
+           C 34 83, 30 72, 32 60 
+           C 34 49, 44 47, 45 44 
+           L 75 44 
+           C 76 47, 86 49, 88 60 
+           C 90 72, 86 83, 77 86 
+           C 71 88, 49 88, 43 86 Z" 
+        fill="url(#terracottaGrad)" />
+
+  <!-- Pot subtle inner belly highlight -->
+  <path d="M 40 61 C 42 53, 47 50, 52 48 C 47 53, 44 61, 46 69 C 48 74, 53 79, 58 82 C 50 80, 43 75, 40 61 Z" 
+        fill="#f3a480" opacity="0.45" />
+
+  <!-- Pot Neck & Rim -->
+  <ellipse cx="60" cy="44" rx="16" ry="4" fill="url(#rimGrad)" />
+  <ellipse cx="60" cy="43" rx="13" ry="2.5" fill="#5c2612" />
+
+  <!-- Sprouting Tree / Roots & Leaves Growing from Clay -->
+  <!-- Plant Stem -->
+  <path d="M 60 43 Q 59 30, 60 21" fill="none" stroke="#436842" stroke-width="3" stroke-linecap="round" />
+  <path d="M 60 32 Q 67 27, 72 25" fill="none" stroke="#436842" stroke-width="2" stroke-linecap="round" />
+  <path d="M 60 27 Q 53 23, 48 21" fill="none" stroke="#436842" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Center Top Leaf -->
+  <path d="M 60 20 C 56 14, 60 7, 60 7 C 60 7, 64 14, 60 20 Z" fill="url(#leafGrad)" />
+
+  <!-- Right Leaf -->
+  <path d="M 72 25 C 75 19, 82 19, 82 19 C 82 19, 79 26, 72 25 Z" fill="url(#leafGrad)" />
+
+  <!-- Left Leaf -->
+  <path d="M 48 21 C 45 15, 38 16, 38 16 C 38 16, 42 22, 48 21 Z" fill="url(#leafGrad)" />
+
+  <!-- Decorative Clay Texture Bands on Pot -->
+  <path d="M 37 66 Q 60 72, 83 66" fill="none" stroke="#f6bb9e" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+  <path d="M 41 73 Q 60 78, 79 73" fill="none" stroke="#f6bb9e" stroke-width="1.2" stroke-linecap="round" opacity="0.5" />
+</svg>
