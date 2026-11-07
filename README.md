@@ -22,25 +22,6 @@ ClayRoots is a pottery-themed frontend website concept that celebrates tradition
 - Bootstrap
 - JavaScript
 
-## 📁 Project Structure
-
-```text
-ClayRoots/
-├── index.html
-├── home.html
-├── Product.html
-├── AboutUs.html
-├── ContactUs.html
-├── login.html
-├── Register.html
-├── logincss.html
-├── css/
-│   └── style.css
-├── js/
-│   └── main.js
-└── images/
-    └── clayroots-logo.svg
-```
 
 ## 🚀 Getting Started
 
